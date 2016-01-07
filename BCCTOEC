@@ -1,0 +1,50 @@
+\documentclass[12pt]{article}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage[margin=0.5in]{geometry}
+\linespread{2}
+
+\begin{document}
+
+
+\begin{table}[ht!]
+\caption{Comparison of ideal tensile stress and strain using TOEC and DFT} %title of the table
+\centering % centering table
+\begin{tabular}{ccccccc} % creating eight columns
+\hline\hline %inserting double-line
+Material	& Crystal Structure	& Deformation Mode	&  $\epsilon^{TOEC}_f$ $\lbrack$\%$\rbrack$	&  $\sigma^{TOEC}_f$ $\lbrack$GPa$\rbrack$ &  $\epsilon^{DFT}_f$ $\lbrack$\%$\rbrack$ &  $\sigma^{DFT}_f $\lbrack$GPa$\rbrack$ $ \\ [0.5ex]
+Mo 		& Tension		& BCC		& 18.0			& 1.77	& 14		& 28.8\cite{Luo}		\\
+W  		& Tension		& BCC		& 17.2 			&  2.70   	& 11.7	& 26.8\cite{Giusepponi}	\\
+Nb		& Shear ($C_{66}$)& BCC		& 4.72			& 6.56	& 5		& 5	\cite{Nagasako}	\\
+Ta 		& Shear ($C_{66}$)& BCC		& 14.6 			& 6.88	& 16		& 13	\cite{Nagasako}	\\
+V   		& Shear ($C_{66}$)& BCC		& 8.68 			& 9.89  	& 6-8		& 4	\cite{Nagasako}	\\
+Al   		& Shear ($C'$)	& FCC		& 9.72 			& 6.20  	& 		& 9.0	\cite{fcc}		\\
+Cu   		& Shear ($C'$)	& FCC		& 11.5 			&  9.70 	&10 		& 9.4	\cite{Cerny}		\\
+Ni   		& Shear ($C'$)	& FCC		& 10.6 			& 13.4  	& 		& 18.3\cite{fcc}		\\
+Ag   		& Shear ($C'$)	& FCC		& 5.70 			& 3.72  	& 		& 				\\[1ex] % [1ex] adds vertical space
+\hline \hline % inserts single-line
+\end{tabular}
+\label{tab:rcore}
+\end{table}
+
+\begin{thebibliography}{99}
+
+\bibitem{Luo}
+W. Luo, D. Roundy, M. L. Cohen, and J. W. Morris, Jr., Phys Rev B  \textbf{66}, 094110 (2002).
+
+\bibitem{Giusepponi}
+S. Giusepponi, M. Celino, J. Nucl. Mat. \textbf{435}, 52-55, (2013).
+
+\bibitem{Nagasako}
+N. Nagasako, M. Jahn\'{a}tek, R. Asahi, and J. Hafner, Phys Rev B \textbf{81}, 094108 (2010).
+
+\bibitem{Cerny}
+M. \u{C}ern\'y, M. \u{S}ob, J. Pokluda, and P. \u{S}andera, J. Phys.: Condens. Matter \textbf{16}, 1045, (2004). 
+
+\bibitem{fcc}
+M. \u{C}ern\'y and J. Pokluda, J. Phys.: Condens. Matter \textbf{21}, 145406, (2009) 
+
+\end{thebibliography}
+
+
+\end{document}
