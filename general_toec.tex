@@ -1,0 +1,96 @@
+%\documentclass[showpacs,aps,floatfix,prb,reprint,superscriptaddress]{revtex4-1} 
+\documentclass[showpacs,floatfix,aps,prb,preprint,superscriptaddress]{revtex4-1}
+%\documentclass[reprint,aps,groupedaddress]{revtex4-1}
+\usepackage{xfrac}
+\usepackage{amssymb}
+\usepackage{braket}
+\usepackage{graphicx}
+%\usepackage{floatfix}
+\usepackage{verbatim}
+\usepackage{etoolbox}
+\usepackage{amsfonts} %maths
+\usepackage{amsmath} %maths
+%\usepackage[fleqn]{amsmath} %maths
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+\usepackage{mathtools}
+\usepackage{soul,xcolor,colortbl}
+\usepackage{lipsum}
+\usepackage{hyperref} \hypersetup{colorlinks=true,citecolor=blue,linkcolor=blue,urlcolor=blue} % HYPERLINKS
+%\usepackage{widetext} %ELSEVIER
+
+ \usepackage{ulem}
+\usepackage{bm} %revtex4.1 for bold symbols
+\usepackage{array}
+\usepackage{color} 
+
+
+\begin{document}
+
+\section*{Calculation of Third-order Elastic Constants for a general System}
+
+Below is an outline of the method used to calculate the third-order elastic constants.  The third-order elastic constants are defined as 
+\begin{equation}
+C_{ijklmn} = \frac{1}{V_0} \left[ \frac{\partial^3F}{\partial \eta_{ij} \partial \eta_{kl} \partial \eta_{mn}} \right] _ {\bm{\eta} = 0}
+\end{equation}
+
+where $F$ is the Helmholtz free energy, $\eta_{ij}$, the Green-Lagrange strain, and $V_0$, the volume of the primitive unit cell.  Using Voigt notation this can be written as
+\begin{equation}
+C_{ijk} = \frac{1}{V_0} \left[ \frac{\partial^3F}{\partial \eta_{i} \partial \eta_{j} \partial \eta_{k}} \right] _ {\bm{\eta} = 0}.
+\end{equation}
+
+If the TOEC contains Voigt symmetry, but no point symmetry other than the identity, the sixth-order elastic tensor will consist of 56 unique constants.  By applying 21 unique strain states, written in terms of a strain parameter, $\eta$ 126 stress states (stress is in terms of the second Piola-Kirchoff stress tensor) are obtained and represented as a vector, $\bm{\tau}$.  The 21 strain states are defined as 
+
+ \begin{widetext}
+\begin{subequations}
+\label{eqn:strainstates} 
+\begin{align}
+        \bm{\eta}^1 &=\left(\begin{matrix} \eta & 0 & 0 & 0 & 0 & 0 \end{matrix}\right)\\
+		\bm{\eta}^2 &=\left(\begin{matrix} 0 & \eta & 0 & 0 & 0 & 0 \end{matrix}\right)\\
+		\bm{\eta}^3 &=\left(\begin{matrix} 0 & 0 & \eta & 0 & 0 & 0 \end{matrix}\right)\\
+    	\bm{\eta}^4 &=\left(\begin{matrix} 0 & 0 & 0 & 2\eta & 0 & 0 \end{matrix}\right)\\
+    	\bm{\eta}^5 &=\left(\begin{matrix} 0 & 0 & 0 & 0 & 2\eta & 0 \end{matrix}\right)\\
+    	\bm{\eta}^6 &=\left(\begin{matrix} 0 & 0 & 0 & 0 & 0 & 2\eta \end{matrix}\right)\\
+    	\bm{\eta}^7 &=\left(\begin{matrix} \eta & \eta & 0 & 0 & 0 & 0 \end{matrix}\right)\\
+    	\bm{\eta}^9 &=\left(\begin{matrix} \eta & 0 & \eta & 0 & 0 & 0 \end{matrix}\right)\\
+    	\bm{\eta}^{10} &=\left(\begin{matrix} \eta & 0 & 0 & 2\eta & 0 & 0 \end{matrix}\right)\\
+    	\bm{\eta}^{11} &=\left(\begin{matrix} \eta & 0 & 0 & 0 & 2\eta & 0 \end{matrix}\right)\\
+    	\bm{\eta}^{12} &=\left(\begin{matrix} \eta & 0 & 0 & 0 & 0 & 2\eta \end{matrix}\right)\\
+    	\bm{\eta}^{13} &=\left(\begin{matrix} 0 & \eta & 0 & 2\eta & 0 & 0 \end{matrix}\right)\\
+    	\bm{\eta}^{14} &=\left(\begin{matrix} 0 & \eta & 0 & 0 & 2\eta & 0 \end{matrix}\right)\\
+    	\bm{\eta}^{15} &=\left(\begin{matrix} 0 & \eta & 0 & 0 & 0 & 2\eta \end{matrix}\right)\\
+    	\bm{\eta}^{16} &=\left(\begin{matrix} 0 & 0 & \eta & 2\eta & 0 & 0 \end{matrix}\right)\\
+    	\bm{\eta}^{17} &=\left(\begin{matrix} 0 & 0 & \eta & 0 & 2\eta & 0 \end{matrix}\right)\\
+    	\bm{\eta}^{18} &=\left(\begin{matrix} 0 & 0 & \eta & 0 & 0 & 2\eta \end{matrix}\right)\\
+    	\bm{\eta}^{19} &=\left(\begin{matrix} 0 & 0 & 0 & 2\eta & 2\eta & 0 \end{matrix}\right)\\
+    	\bm{\eta}^{20} &=\left(\begin{matrix} 0 & 0 & 0 & 2\eta & 0 & 2\eta \end{matrix}\right)\\
+    	\bm{\eta}^{21} &=\left(\begin{matrix} 0 & 0 & 0 & 0 & 2\eta & 2\eta \end{matrix}\right).
+\end{align}
+\end{subequations}
+\end{widetext} 
+
+\noindent By taking the second derivative of $\bm{\tau}$ with respect to the strain parameter a linear system of equations can be constructed of the form
+
+\begin{equation}
+\frac{\partial^2 \tau_i}{\partial \eta^2} = A_{ik} \Xi_k
+\end{equation}
+
+
+\noindent with the TOEC being written as a $56\times1$ array, $\bm{\Xi}$. If we write  the second Piola-Kirchoff stress tensor in terms of the $\alpha^{th}$ strain state in Voigt notation to be
+
+\begin{equation}
+\tau_i^{\alpha} = C_{ij} \eta_{j}^{\alpha} + \frac{1}{2}C_{ijk}  \eta_{j}^{\alpha}  \eta_{k}^{\alpha}
+\end{equation}
+
+\noindent Differentiating $\bm{\tau}$ with respect to $\eta$ and $C_{ijk}$ and mapping the 21 derivatives stress tensors and 56 TOEC into vectors, $\bm{\tau}$ and $\bm{\Xi}$, will allow for $\bm{A}$ to be expressed as a constant $126\times 56$ matrix.  $\bm{\Xi}$ can then be determined by pseudoinversion.
+
+The components of $\frac{\partial^2\tau_i}{\partial \eta^2}$ were evaluated numerically using the finite difference method.  A 9 point central difference stencil about $\eta=0$ was used to calculate the second derivative of the 2nd Piola-Kirchoff stress components.    While the maximum strain used in the finite difference calculations is system dependent and determined from convergence testing with respect to the TOEC, a maximum strain of $\eta_{max} = 0.05$ has been shown to be appropriate for most systems studied.
+
+In the calculation of the TOEC no considerations with regards to symmetry are given.  In the case where the point group of the crystal is larger than the identity or it is desired to approximate the closest tensor of a higher symmetry (such as in the case of a solid solution), the TOEC must be symmetrized as follows
+
+\begin{equation}
+\hat{C}_{ijklmn} = \frac{1}{n_G} \sum\limits_{\alpha=1}^{n_G}  a^{(\alpha)}_{ip}  a^{(\alpha)}_{jq}  a^{(\alpha)}_{kr}  a^{(\alpha)}_{ls}  a^{(\alpha)}_{mt}  a^{(\alpha)}_{nv} C_{pqrstu}
+\end{equation}
+
+where $n_G$ is the number of elements in the point group, and $a_{ip}^{(\alpha)}$, the transformation matrix associated with the $\alpha^{th}$ element of the group.  Note that Einstein summation notation is applied to all latin subscripts.
+
+\end{document} 
